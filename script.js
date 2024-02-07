@@ -59,10 +59,10 @@ function game (){
 // game(); 
 
 alert('Hello! You\'ll be playing Rock Paper Scissors with me! And yes I\'m a computer so let the Human ⚔️ Machine Battle start ');
-setTimeout(() => console.log('The game starts in..'), 14000);
-setTimeout(() => console.log('3..'), 15000);
-setTimeout(() => console.log('2..'), 16000);
-setTimeout(() => console.log('1..'), 17000);
+setTimeout(() => console.log('The game starts in..'), 10000);
+setTimeout(() => console.log('3..'), 11000);
+setTimeout(() => console.log('2..'), 12000);
+setTimeout(() => console.log('1..'), 13000);
 setTimeout(() => game(), 18000);
 
 /* let playerSelection = ""
