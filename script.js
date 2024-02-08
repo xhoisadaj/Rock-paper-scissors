@@ -39,7 +39,7 @@ function game() {
             return `You Win! ${playerSelection.charAt(0).toUpperCase() + selection.slice(1).toLowerCase()} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`;
         } else {
             computerWins++;
-            return `You Lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + selection.slice(1).toLowerCase()}`;
+            return `You Lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}`;
         }
     }
     
