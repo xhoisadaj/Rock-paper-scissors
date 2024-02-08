@@ -14,15 +14,15 @@ function isValidInput(userInput) {
     playerSelectionLowCas !== 'rock' &&
     playerSelectionLowCas !== 'paper' &&
     playerSelectionLowCas !== 'scissors' &&
-    playerSelectionLowCas !== '' &&
-    playerSelectionLowCas !== null
+    (playerSelectionLowCas === '' ||
+    playerSelectionLowCas === null)
   ) {
     console.log(
       'You can only input "Rock" "Paper" or "Scissors" 😐 Try again!'
     );
     return false;
   } else {
-    console.log('Player picked ' + playerSelectionLowCas);
+    console.log('You picked ' + playerSelectionLowCas);
     return true;
   }
 }
@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
   let computerSelectionLowCas = computerSelection.toLowerCase();
 
   if (playerSelectionLowCas === computerSelectionLowCas) {
-    return "It's a draw!";
+    return `It's a draw! We both picked ${playerSelectionLowCas}` ;
   } else if (
     (playerSelectionLowCas === 'rock' &&
       computerSelectionLowCas === 'scissors') ||
@@ -94,21 +94,17 @@ function game() {
   } else if (playerScore < computerScore) {
     console.log('You lose the game. Try again! 😔');
   } else {
-    console.log("It's a tie! Try again for a winner. 🤝");
+    console.log("It's a tie! Try again if you dare 🤪");
   }
 }
 
 // game();
 
 alert(
-  "Hello! You'll be playing Rock Paper Scissors with me! And yes I'm a computer so let the Human ⚔️ Machine Battle start "
+  "Hello! You'll be playing Rock Paper Scissors with me! And yes I'm a computer so let the Human VS Machine Battle start! ⚔️"
 );
 setTimeout(() => console.log('The game starts in..'), 3000);
 setTimeout(() => console.log('3..'), 4000);
 setTimeout(() => console.log('2..'), 5000);
 setTimeout(() => console.log('1..'), 6000);
 setTimeout(() => game(), 7000);
-
-/* let playerSelection = ""
-let computerSelection= computerPlay();
-console.log(playRound(playerSelection, computerSelection)); */
