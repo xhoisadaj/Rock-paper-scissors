@@ -18,13 +18,13 @@ function isValidInput(userInput) {
     );
     return false;
   } else {
+    console.log('Computer selected ' + computerPlay());
     console.log('Player picked ' + playerSelectionLowCas);
     return true;
   }
 }
 
 function playRound(playerSelection, computerSelection) {
-  // let playerSelectionLowCas = isValidInput(playerSelection);
   let playerSelectionLowCas = playerSelection.toLowerCase().trim();
   let computerSelectionLowCas = computerSelection.toLowerCase();
 
@@ -37,9 +37,13 @@ function playRound(playerSelection, computerSelection) {
     (playerSelectionLowCas === 'scissors' &&
       computerSelectionLowCas === 'paper')
   ) {
-    return `You Win! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
+    return `You Win! ${playerSelectionLowCas.charAt(0).toUpperCase() +
+        playerSelectionLowCas.slice(1).toLowerCase()} beats ${computerSelectionLowCas.charAt(0).toUpperCase() +
+            computerSelectionLowCas.slice(1).toLowerCase()}`;
   } else {
-    return `You Lose! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
+    return `You Lose! ${playerSelectionLowCas.charAt(0).toUpperCase() +
+        playerSelectionLowCas.slice(1).toLowerCase()} beats ${computerSelectionLowCas.charAt(0).toUpperCase() +
+            computerSelectionLowCas.slice(1).toLowerCase()}`;
   }
 }
 
@@ -52,11 +56,7 @@ function cancelGame() {
 
 function playerPlay() {
   let playerSelection = prompt('Type either Rock, Paper, or Scissors!');
-  // if (playerSelection === null) {
-  //   cancelGame();
-  // } else {
-  //   let playerSelection = prompt('Type either Rock, Paper, or Scissors!');
-  // }
+
   if (playerSelection === null) {
     const choice = prompt(`To quit the game, type "yes" to confirm`)
       ?.trim()
@@ -100,7 +100,7 @@ function playAgain() {
   } else if (playAgainPrompt.toLowerCase() == 'n') {
     console.log('%cThank you for playing! 😊', 'color:blue; font-weight:bold;');
     console.log(
-      '%cMeant to say say? Type game() in this console',
+      '%cMeant to say yes? Type game() in this console',
       'color:#ccc; font-size: 9px;'
     );
   }
@@ -108,19 +108,19 @@ function playAgain() {
 
 const addFunnyMessage = (win) => {
   const funnyWinInfo = [
-    'Amazing, You were born to win!',
-    "Wow, you're a rockstar!",
-    "You're the ultimate champion!",
-    "You're unstoppable",
-    'You are on fire!',
+    'AHHH! You have defeated me!',
+    "You are on a roll!",
+    "If you are the winner, clap your hands *clap clap*",
+    "You are the bees knees!",
+    'You are the BOMB.COM!',
   ];
 
   const funnyloseInfo = [
-    'Losing is essential to anyone’s success.',
-    'You are a fighter, never give up!',
-    'You almost got it! Keep it up!',
-    "You've got skills, keep practicing!",
-    'Dont worry, better luck soon!',
+    "It's okay, everyone loses sometimes.",
+    'You will never defeat me! MWAHAHAHA!',
+    'Oh no! You need to try again to beat me!',
+    "Just believe in the heart of the cards.",
+    'Better luck next time!',
   ];
 
   const displayMessage = win ? funnyWinInfo : funnyloseInfo;
@@ -153,23 +153,30 @@ function game() {
 
   if (playerScore > computerScore) {
     console.log('You win the game! 🏆');
-    console.log(` ${addFunnyMessage(true)}`);
+    console.log(`${addFunnyMessage(true)}`);
   } else if (playerScore < computerScore) {
     console.log('You lose the game. Try again! 😔');
-    console.log(` ${addFunnyMessage(false)}`);
+    console.log(`${addFunnyMessage(false)}`);
   } else {
     console.log("It's a tie! Try again if you dare 🤪");
   }
   playAgain();
 }
 
-// game();
 
 alert(
-  "Hello! You'll be playing Rock Paper Scissors with me! And yes I'm a computer so let the Human VS Machine Battle start! ⚔️"
+  "Hello! You'll be playing Rock Paper Scissors with me! And yes I'm a computer so let the Human VS Machine Battle start! ⚔️ - Make sure you open your console!"
 );
+
 setTimeout(() => console.log('The game starts in..'), 3000);
 setTimeout(() => console.log('3..'), 4000);
 setTimeout(() => console.log('2..'), 5000);
 setTimeout(() => console.log('1..'), 6000);
-setTimeout(() => game(), 7000);
+
+setTimeout(() => {
+    console.log('%cRemember:', 'color:#999; font-weight:bold;');
+    console.log('%cRock👊🏼 beats scissors✂️', 'color:#999; font-weight:bold;');
+    console.log('%cScissors✂️ beats paper🖐🏼', 'color:#999; font-weight:bold;');
+    console.log('%cPaper🖐🏼 beats rock👊🏼', 'color:#999; font-weight:bold;');
+    game()
+}, 7000);
