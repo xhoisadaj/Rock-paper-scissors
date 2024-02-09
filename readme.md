@@ -30,7 +30,7 @@ This game allows players to engage in the classic hand game against the computer
 
 ## File Structure
 
-- `index.html`: The main HTML file containing the game interface.
-- `script.js`: JavaScript file containing the game logic.
+- `index.html`: The main HTML file containing the link to the JavaScript file.
+- `script.js`: JavaScript file containing the game logic and displaying it via the console.
 - `README.md`: This file providing instructions and information about the game.
 
