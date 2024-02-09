@@ -1,6 +1,6 @@
-# Rock Paper Scissors Game - "The Ancient Rivalry: The Legend of Three Kingdoms"
+# Rock Paper Scissors Game
 
-Welcome to the Tricoria! This sacred ritual, known as "The Hand of Destiny", allows players to engage in the classic hand game against the computer. Test your luck and strategy as you aim to outwit your opponent!
+This game allows players to engage in the classic hand game against the computer. Test your luck and strategy as you aim to outwit your opponent!
 
 ## The team
 - Jessica Ferreira
@@ -21,7 +21,7 @@ Welcome to the Tricoria! This sacred ritual, known as "The Hand of Destiny", all
      - Paper covers rock
    - The game will announce the winner of each duel and keep track of the score.
 
-3. **Winning the Game**: The ritual consists of a series of rounds (5 in this case). The player with the most wins after a set number of rounds is declared the overall winner.
+3. **Winning the Game**: The game consists of a series of rounds (5 in this case). The player with the most wins after a set number of rounds is declared the overall winner.
 
 ## Technologies Used
 
