@@ -6,20 +6,20 @@ function game() {
     let computerWins = 0;
     
     function playBackstory () {
-        console.log("In the mythical land of Tricoria, there existed three mighty kingdoms: Rockonia, Paperland, and Scissoria. ");
-        console.log("Each kingdom was founded upon the principles of strength, wisdom, and cunning, respectively.");
-        console.log("Long ago, the three kingdoms lived in harmony, guided by the ancient prophecy that foretold of an eternal balance between them.");
-        console.log("However, as time passed, tensions rose, and rivalries deepened.");
-        console.log("The once harmonious relationship turned into bitter competition as each kingdom sought dominance over the others.");
-        console.log("The rulers of Rockonia, Paperland, and Scissoria believed that the fate of their kingdoms lay in the outcome of a sacred ritual known as 'The Hand of Destiny.'");
-        console.log("In this ritual, champions from each kingdom would engage in battles using the symbolic representations of their kingdoms: rock, paper, and scissors.");
-        console.log("Legend has it that whoever triumphs in the Hand of Destiny would be granted the power to shape the destiny of Tricoria itself.");
-        console.log("The stakes are high, and the outcome uncertain.");
-        console.log("It's up to you, the chosen champion, to lead your kingdom to victory and restore balance to the land.");
-        console.log("Choose your hand wisely, for the fate of Tricoria hangs in the balance!");
+        setTimeout(() => console.log("In the mythical land of Tricoria, there existed three mighty kingdoms: Rockonia, Paperland, and Scissoria. "), 3000)
+        setTimeout(() => console.log("Each kingdom was founded upon the principles of strength, wisdom, and cunning, respectively."), 4000)
+        setTimeout(() => console.log("Long ago, the three kingdoms lived in harmony, guided by the ancient prophecy that foretold of an eternal balance between them."), 5000)
+        setTimeout(() => console.log("However, as time passed, tensions rose, and rivalries deepened."), 6000)
+        setTimeout(() => console.log("The once harmonious relationship turned into bitter competition as each kingdom sought dominance over the others."), 7000)
+        setTimeout(() => console.log("The rulers of Rockonia, Paperland, and Scissoria believed that the fate of their kingdoms lay in the outcome of a sacred ritual known as 'The Hand of Destiny.'"), 8000)
+        setTimeout(() => console.log("In this ritual, champions from each kingdom would engage in battles using the symbolic representations of their kingdoms: rock, paper, and scissors."), 9000)
+        setTimeout(() => console.log("Legend has it that whoever triumphs in the Hand of Destiny would be granted the power to shape the destiny of Tricoria itself."), 10000)
+        setTimeout(() => console.log("The stakes are high, and the outcome uncertain."), 11000)
+        setTimeout(() => console.log("It's up to you, the chosen champion, to lead your kingdom to victory and restore balance to the land."), 12000)
+        setTimeout(() => console.log("Choose your hand wisely, for the fate of Tricoria hangs in the balance!"), 13000)
         
-        console.log("========================================================================================================");
-        console.log("Let the 5 duels begin!");
+        setTimeout(() => console.log("========================================================================================================"), 14000)
+        setTimeout(() => console.log("Let the 5 duels begin!"), 15000)
     }
     
     function computerPlay() {
