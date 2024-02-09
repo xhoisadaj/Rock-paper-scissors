@@ -24,7 +24,6 @@ function isValidInput(userInput) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  // let playerSelectionLowCas = isValidInput(playerSelection);
   let playerSelectionLowCas = playerSelection.toLowerCase().trim();
   let computerSelectionLowCas = computerSelection.toLowerCase();
 
@@ -87,6 +86,7 @@ function playAgain() {
     );
     playAgain();
   } else if (playAgainPrompt.toLowerCase() == 'y') {
+    console.clear();
     console.log("%cYay! Let's play again 😊", 'color:blue; font-weight:bold;');
     console.log('%cRemember:', 'color:#999; font-weight:bold;');
     console.log('%cRock👊🏼 beats scissors✂️', 'color:#999; font-weight:bold;');
@@ -107,25 +107,25 @@ function playAgain() {
 }
 
 const addFunnyMessage = (win) => {
-  const funnyWinInfo = [
-    'Amazing, You were born to win!',
-    "Wow, you're a rockstar!",
-    "You're the ultimate champion!",
-    "You're unstoppable",
-    'You are on fire!',
+  const funnyWinMessages = [
+    'AHHH! You have defeated me!',
+    'You are on a roll!',
+    'If you are the winner, clap your hands *clap clap*',
+    'You are the bees knees!',
+    'You are the BOMB.COM!',
   ];
 
-  const funnyloseInfo = [
-    'Losing is essential to anyone’s success.',
-    'You are a fighter, never give up!',
-    'You almost got it! Keep it up!',
-    "You've got skills, keep practicing!",
-    'Dont worry, better luck soon!',
+  const funnyLoseMessages = [
+    "It's okay, everyone loses sometimes.",
+    'You will never defeat me! MWAHAHAHA!',
+    'Oh no! You need to try again to beat me!',
+    'Just believe in the heart of the cards.',
+    'Better luck next time!',
   ];
 
-  const displayMessage = win ? funnyWinInfo : funnyloseInfo;
+  const showMessage = win ? funnyWinMessages : funnyLoseMessages;
   const randomMessage =
-    displayMessage[Math.floor(Math.random() * displayMessage.length)];
+    showMessage[Math.floor(Math.random() * showMessage.length)];
   return randomMessage;
 };
 
@@ -139,8 +139,8 @@ function game() {
     if (finishGame) {
       return null;
     }
-    let computerSelection = computerPlay();
 
+    let computerSelection = computerPlay();
     let roundResult = playRound(playerSelection, computerSelection);
     console.log('Round ' + round + ': ' + roundResult);
 
@@ -152,18 +152,21 @@ function game() {
   }
 
   if (playerScore > computerScore) {
-    console.log('You win the game! 🏆');
+    console.log(
+      `You won the game! 🏆 You scored ${playerScore} and computer scored ${computerScore}`
+    );
     console.log(` ${addFunnyMessage(true)}`);
   } else if (playerScore < computerScore) {
-    console.log('You lose the game. Try again! 😔');
+    console.log(
+      `You lose the game. Try again! 😔 You scored ${playerScore} and computer scored ${computerScore}`
+    );
     console.log(` ${addFunnyMessage(false)}`);
   } else {
     console.log("It's a tie! Try again if you dare 🤪");
   }
+
   playAgain();
 }
-
-// game();
 
 alert(
   "Hello! You'll be playing Rock Paper Scissors with me! And yes I'm a computer so let the Human VS Machine Battle start! ⚔️"
