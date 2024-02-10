@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
   ) {
     return `You Win! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
   } else {
-    return `You Lose! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
+    return `You Lose! ${computerSelectionLowCas} beats ${playerSelectionLowCas}`;
   }
 }
 
