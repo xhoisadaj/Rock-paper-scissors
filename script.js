@@ -11,13 +11,13 @@ function isValidInput(userInput) {
     );
     return false;
   }
-  console.log("Player picked " + userInput);
+  console.log('Player picked ' + userInput);
   return true;
 }
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return `It's a draw! We both picked ${playerSelectionLowCas}`;
+    return `It's a draw! We both picked ${playerSelection}`;
   } else if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
@@ -37,7 +37,7 @@ function playerPlay() {
 
     if (choice) {
       console.log('%cThank you for playing!', 'color:green; font-weight:bold;');
-      finishGame = true;
+      return (finishGame = true);
     } else {
       return playerPlay();
     }
@@ -55,7 +55,10 @@ function playAgain() {
   let playAgainPrompt = confirm('Do you want to play again?');
 
   if (!playAgainPrompt) {
-    console.log('%cThank you for playing! 😊', 'color:green; font-weight:bold;');
+    console.log(
+      '%cThank you for playing! 😊',
+      'color:green; font-weight:bold;'
+    );
     console.log(
       '%cMeant to say yes? Type game() in this console',
       'color:#ccc; font-size: 9px;'
@@ -77,8 +80,20 @@ function playAgain() {
 
 function funnyMessages(win) {
   const messages = win
-    ? ["AHHH! You have defeated me!", "You are on a roll!", "If you are the winner, clap your hands *clap clap*", "You are the bees knees!", "You are the BOMB.COM!"]
-    : ["It's okay, everyone loses sometimes.", "You will never defeat me! MWAHAHAHA!", "Oh no! You need to try again to beat me!", "Just believe in the heart of the cards.", "Better luck next time!"];
+    ? [
+        'AHHH! You have defeated me!',
+        'You are on a roll!',
+        'If you are the winner, clap your hands *clap clap*',
+        'You are the bees knees!',
+        'You are the BOMB.COM!',
+      ]
+    : [
+        "It's okay, everyone loses sometimes.",
+        'You will never defeat me! MWAHAHAHA!',
+        'Oh no! You need to try again to beat me!',
+        'Just believe in the heart of the cards.',
+        'Better luck next time!',
+      ];
 
   return messages[Math.floor(Math.random() * messages.length)];
 }
