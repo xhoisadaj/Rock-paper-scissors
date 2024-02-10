@@ -48,9 +48,7 @@ function playerPlay() {
     if (choice) {
       console.log('%cThank you for playing!', 'color:blue; font-weight:bold;');
       finishGame = true;
-      return null; // Return null to indicate the user canceled the game
     } else {
-      // Allow the user to retry if they canceled the prompt
       return playerPlay();
     }
   }
