@@ -48,8 +48,10 @@ function playerPlay() {
     if (choice) {
       console.log('%cThank you for playing!', 'color:blue; font-weight:bold;');
       finishGame = true;
+      return null; // Return null to indicate the user canceled the game
     } else {
-      playerPlay();
+      // Allow the user to retry if they canceled the prompt
+      return playerPlay();
     }
   }
 
@@ -59,6 +61,7 @@ function playerPlay() {
     return playerSelection;
   }
 }
+
 function playAgain() {
   let playAgainPrompt = confirm('Do you want to play again?');
 
