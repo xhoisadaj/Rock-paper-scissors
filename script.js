@@ -1,26 +1,20 @@
 let result = ['rock', 'paper', 'scissors'];
 let finishGame = false;
 function computerPlay() {
-  let randomSelection = result[Math.floor(Math.random() * result.length)];
-  return randomSelection;
+  return result[Math.floor(Math.random() * result.length)];
 }
 
 function isValidInput(userInput) {
   let playerSelectionLowCas = userInput.toLowerCase().trim();
 
-  if (
-    playerSelectionLowCas !== 'rock' &&
-    playerSelectionLowCas !== 'paper' &&
-    playerSelectionLowCas !== 'scissors'
-  ) {
+  if (!result.includes(playerSelectionLowCas)) {
     console.log(
       'You can only input "Rock" "Paper" or "Scissors" 😐 Try again!'
     );
     return false;
-  } else {
-    console.log('You picked ' + playerSelectionLowCas);
-    return true;
   }
+  console.log("Player picked " + playerSelectionLowCas);
+  return true;
 }
 
 function playRound(playerSelection, computerSelection) {
