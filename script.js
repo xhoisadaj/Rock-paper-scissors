@@ -25,16 +25,13 @@ function isValidInput(userInput) {
 
 function playRound(playerSelection, computerSelection) {
   let playerSelectionLowCas = playerSelection.toLowerCase().trim();
-  let computerSelectionLowCas = computerSelection.toLowerCase();
-
-  if (playerSelectionLowCas === computerSelectionLowCas) {
+  
+  if (playerSelectionLowCas === computerSelection) {
     return `It's a draw! We both picked ${playerSelectionLowCas}`;
   } else if (
-    (playerSelectionLowCas === 'rock' &&
-      computerSelectionLowCas === 'scissors') ||
-    (playerSelectionLowCas === 'paper' && computerSelectionLowCas === 'rock') ||
-    (playerSelectionLowCas === 'scissors' &&
-      computerSelectionLowCas === 'paper')
+    (playerSelectionLowCas === "rock" && computerSelection === "scissors") ||
+    (playerSelectionLowCas === "paper" && computerSelection === "rock") ||
+    (playerSelectionLowCas === "scissors" && computerSelection === "paper")
   ) {
     return `You Win! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
   } else {
