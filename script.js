@@ -18,7 +18,7 @@ function isValidInput(userInput) {
     );
     return false;
   } else {
-    console.log('Player picked ' + playerSelectionLowCas);
+    console.log('You picked ' + playerSelectionLowCas);
     return true;
   }
 }
