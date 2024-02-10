@@ -46,7 +46,7 @@ function playerPlay() {
     const choice = confirm('Are you sure you want to quit the game?');
 
     if (choice) {
-      console.log('%cThank you for playing!', 'color:blue; font-weight:bold;');
+      console.log('%cThank you for playing!', 'color:green; font-weight:bold;');
       finishGame = true;
     } else {
       return playerPlay();
@@ -64,7 +64,7 @@ function playAgain() {
   let playAgainPrompt = confirm('Do you want to play again?');
 
   if (!playAgainPrompt) {
-    console.log('%cThank you for playing! 😊', 'color:blue; font-weight:bold;');
+    console.log('%cThank you for playing! 😊', 'color:green; font-weight:bold;');
     console.log(
       '%cMeant to say yes? Type game() in this console',
       'color:#ccc; font-size: 9px;'
