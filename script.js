@@ -65,7 +65,7 @@ function playAgain() {
     );
   } else {
     console.clear();
-    console.log("%cYay! Let's play again 😊", 'color:blue; font-weight:bold;');
+    console.log("%cYay! Let's play again 😊", 'color:green; font-weight:bold;');
     console.log('%cRemember:', 'color:#999; font-weight:bold;');
     console.log('%cRock👊🏼 beats scissors✂️', 'color:#999; font-weight:bold;');
     console.log('%cScissors✂️ beats paper🖐🏼', 'color:#999; font-weight:bold;');
