@@ -51,11 +51,7 @@ function cancelGame() {
 
 function playerPlay() {
   let playerSelection = prompt('Type either Rock, Paper, or Scissors!');
-  // if (playerSelection === null) {
-  //   cancelGame();
-  // } else {
-  //   let playerSelection = prompt('Type either Rock, Paper, or Scissors!');
-  // }
+
   if (playerSelection === null) {
     const choice = prompt(`To quit the game, type "yes" to confirm`)
       ?.trim()
@@ -73,6 +69,7 @@ function playerPlay() {
     return playerSelection;
   }
 }
+
 function playAgain() {
   let playAgainPrompt = prompt('Want to play again? y/n');
   if (
@@ -106,7 +103,7 @@ function playAgain() {
   }
 }
 
-const addFunnyMessage = (win) => {
+const funnyMessages = (win) => {
   const funnyWinMessages = [
     'AHHH! You have defeated me!',
     'You are on a roll!',
@@ -155,12 +152,12 @@ function game() {
     console.log(
       `You won the game! 🏆 You scored ${playerScore} and computer scored ${computerScore}`
     );
-    console.log(` ${addFunnyMessage(true)}`);
+    console.log(` ${funnyMessages(true)}`);
   } else if (playerScore < computerScore) {
     console.log(
       `You lose the game. Try again! 😔 You scored ${playerScore} and computer scored ${computerScore}`
     );
-    console.log(` ${addFunnyMessage(false)}`);
+    console.log(` ${funnyMessages(false)}`);
   } else {
     console.log("It's a tie! Try again if you dare 🤪");
   }
