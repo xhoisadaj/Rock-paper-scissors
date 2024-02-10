@@ -5,31 +5,27 @@ function computerPlay() {
 }
 
 function isValidInput(userInput) {
-  let playerSelectionLowCas = userInput.toLowerCase().trim();
-
-  if (!result.includes(playerSelectionLowCas)) {
+  if (!result.includes(userInput)) {
     console.log(
       'You can only input "Rock" "Paper" or "Scissors" 😐 Try again!'
     );
     return false;
   }
-  console.log("Player picked " + playerSelectionLowCas);
+  console.log("Player picked " + userInput);
   return true;
 }
 
 function playRound(playerSelection, computerSelection) {
-  let playerSelectionLowCas = playerSelection.toLowerCase().trim();
-
-  if (playerSelectionLowCas === computerSelection) {
+  if (playerSelection === computerSelection) {
     return `It's a draw! We both picked ${playerSelectionLowCas}`;
   } else if (
-    (playerSelectionLowCas === 'rock' && computerSelection === 'scissors') ||
-    (playerSelectionLowCas === 'paper' && computerSelection === 'rock') ||
-    (playerSelectionLowCas === 'scissors' && computerSelection === 'paper')
+    (playerSelection === 'rock' && computerSelection === 'scissors') ||
+    (playerSelection === 'paper' && computerSelection === 'rock') ||
+    (playerSelection === 'scissors' && computerSelection === 'paper')
   ) {
-    return `You Win! ${playerSelectionLowCas} beats ${computerSelection}`;
+    return `You Win! ${playerSelection} beats ${computerSelection}`;
   } else {
-    return `You Lose! ${computerSelection} beats ${playerSelectionLowCas}`;
+    return `You Lose! ${computerSelection} beats ${playerSelection}`;
   }
 }
 
@@ -47,6 +43,7 @@ function playerPlay() {
     }
   }
 
+  playerSelection = playerSelection.toLowerCase().trim();
   if (!finishGame && !isValidInput(playerSelection)) {
     return playerPlay();
   } else {
