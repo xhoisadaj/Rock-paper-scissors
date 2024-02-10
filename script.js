@@ -33,9 +33,9 @@ function playRound(playerSelection, computerSelection) {
     (playerSelectionLowCas === "paper" && computerSelection === "rock") ||
     (playerSelectionLowCas === "scissors" && computerSelection === "paper")
   ) {
-    return `You Win! ${playerSelectionLowCas} beats ${computerSelectionLowCas}`;
+    return `You Win! ${playerSelectionLowCas} beats ${computerSelection}`;
   } else {
-    return `You Lose! ${computerSelectionLowCas} beats ${playerSelectionLowCas}`;
+    return `You Lose! ${computerSelection} beats ${playerSelectionLowCas}`;
   }
 }
 
