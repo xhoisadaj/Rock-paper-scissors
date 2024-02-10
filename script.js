@@ -78,28 +78,13 @@ function playAgain() {
   }
 }
 
-const funnyMessages = (win) => {
-  const funnyWinMessages = [
-    'AHHH! You have defeated me!',
-    'You are on a roll!',
-    'If you are the winner, clap your hands *clap clap*',
-    'You are the bees knees!',
-    'You are the BOMB.COM!',
-  ];
+function funnyMessages(win) {
+  const messages = win
+    ? ["AHHH! You have defeated me!", "You are on a roll!", "If you are the winner, clap your hands *clap clap*", "You are the bees knees!", "You are the BOMB.COM!"]
+    : ["It's okay, everyone loses sometimes.", "You will never defeat me! MWAHAHAHA!", "Oh no! You need to try again to beat me!", "Just believe in the heart of the cards.", "Better luck next time!"];
 
-  const funnyLoseMessages = [
-    "It's okay, everyone loses sometimes.",
-    'You will never defeat me! MWAHAHAHA!',
-    'Oh no! You need to try again to beat me!',
-    'Just believe in the heart of the cards.',
-    'Better luck next time!',
-  ];
-
-  const showMessage = win ? funnyWinMessages : funnyLoseMessages;
-  const randomMessage =
-    showMessage[Math.floor(Math.random() * showMessage.length)];
-  return randomMessage;
-};
+  return messages[Math.floor(Math.random() * messages.length)];
+}
 
 function game() {
   let playerScore = 0;
